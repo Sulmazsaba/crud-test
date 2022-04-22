@@ -1,8 +1,14 @@
+using Mc2.CrudTest.Application;
+using Mc2.CrudTest.Domain;
+using Mc2.CrudTest.DomainService;
+using Mc2.CrudTest.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
+using System;
 
 namespace Mc2.CrudTest.Presentation.Server
 {
@@ -20,8 +26,22 @@ namespace Mc2.CrudTest.Presentation.Server
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddApplicationService();
+            services.AddInfrastructureService(Configuration);
+            services.AddDomainService();
+            services.AddDomainsService();
+
             services.AddControllersWithViews();
-            services.AddRazorPages();
+            services.AddRazorPages(); 
+            
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Consumer EndPoint"
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,6 +71,14 @@ namespace Mc2.CrudTest.Presentation.Server
                 endpoints.MapControllers();
                 endpoints.MapFallbackToFile("index.html");
             });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+            });
+
         }
+
     }
 }
