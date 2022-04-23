@@ -1,4 +1,6 @@
 ﻿using Mc2.CrudTest.Domain.Core;
+using Mc2.CrudTest.Domain.CustomerModule.Contracts;
+using Mc2.CrudTest.Domain.CustomerModule.Events;
 using Mc2.CrudTest.Domain.Exceptions;
 using System;
 using System.Collections.Generic;

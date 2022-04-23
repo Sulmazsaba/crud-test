@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Mc2.CrudTest.Domain.CustomerModule.Contracts;
 using MediatR;
 using System;
 using System.Collections.Generic;

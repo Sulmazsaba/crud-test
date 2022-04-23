@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mc2.CrudTest.Domain.CustomerModule
+namespace Mc2.CrudTest.Domain.CustomerModule.Contracts
 {
     public interface ICustomerDuplicateChecker
     {
-        void CheckCustomerDuplicated(System.Guid customerId, string firstName, string lastName, DateTime dateOfBirth);
+        void CheckCustomerDuplicated(Guid customerId, string firstName, string lastName, DateTime dateOfBirth);
     }
 }

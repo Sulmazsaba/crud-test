@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mc2.CrudTest.Domain.CustomerModule.Commands
 {
-    public class AddCustomerCommand : IRequest<System.Guid>
+    public class AddCustomerCommand : IRequest<Guid>
     {
         public string Firstname { get; set; }
         public string Lastname { get; set; }
@@ -16,7 +16,7 @@ namespace Mc2.CrudTest.Domain.CustomerModule.Commands
         public string Email { get; set; }
         public string BankAccountNumber { get; set; }
 
-        public CustomerInitializerArgument ToInitializerArgument(System.Guid customerId)
+        public CustomerInitializerArgument ToInitializerArgument(Guid customerId)
         {
             return new CustomerInitializerArgument
             {

@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+
+  mc2db:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+
+  mc2.crudtest.presentation.server:
+    image: ${DOCKER_REGISTRY-}mc2crudtestpresentationserver
+    build:
+      context: .
+      dockerfile: Mc2.CrudTest.Presentation/Server/Dockerfile
+
+
+
+  

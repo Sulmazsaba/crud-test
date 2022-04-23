@@ -2,6 +2,8 @@ using Mc2.CrudTest.Application;
 using Mc2.CrudTest.Domain;
 using Mc2.CrudTest.DomainService;
 using Mc2.CrudTest.Infrastructure;
+using Mc2.CrudTest.Infrastructure.Persistence;
+using Mc2.CrudTest.Presentation.Server.Middlewares;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -69,7 +71,7 @@ namespace Mc2.CrudTest.Presentation.Server
             {
                 endpoints.MapRazorPages();
                 endpoints.MapControllers();
-                endpoints.MapFallbackToFile("index.html");
+                //endpoints.MapFallbackToFile("index.html");
             });
 
             app.UseSwagger();
@@ -77,6 +79,9 @@ namespace Mc2.CrudTest.Presentation.Server
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
             });
+
+            app.UseMiddleware<ExceptionHandlerMiddleware>();
+
 
         }
 

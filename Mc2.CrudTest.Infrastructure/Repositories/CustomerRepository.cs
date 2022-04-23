@@ -1,4 +1,5 @@
 ﻿using Mc2.CrudTest.Domain.CustomerModule;
+using Mc2.CrudTest.Domain.CustomerModule.Contracts;
 using Mc2.CrudTest.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using System;

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mc2.CrudTest.Domain.CustomerModule
+namespace Mc2.CrudTest.Domain.CustomerModule.Events
 {
     public class CustomerCreatedEvent : DomainEventBase
     {
@@ -13,12 +13,12 @@ namespace Mc2.CrudTest.Domain.CustomerModule
         {
         }
 
-        public CustomerCreatedEvent(System.Guid aggregateId) : base(aggregateId)
+        public CustomerCreatedEvent(Guid aggregateId) : base(aggregateId)
         {
 
         }
 
-        public CustomerCreatedEvent( string firstname, string lastname, DateTime dateOfBirth,
+        public CustomerCreatedEvent(string firstname, string lastname, DateTime dateOfBirth,
           string phoneNumber, string email, string bankAccountNumber)
         {
             Firstname = firstname;

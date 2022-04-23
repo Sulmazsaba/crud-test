@@ -58,7 +58,7 @@ namespace Mc2.CrudTest.Application.Tests
             var result = await _customerWriter.AddCustomer(_addCustomerCommand);
 
 
-            result.Id.Should().NotBe(null);
+            result.Id.Should().NotBeEmpty();
             result.Email.Should().Be(_addCustomerCommand.Email);
             result.BankAccountNumber.Should().Be(_addCustomerCommand.BankAccountNumber);
         }

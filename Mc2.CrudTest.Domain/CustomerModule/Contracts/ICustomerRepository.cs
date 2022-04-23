@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mc2.CrudTest.Domain.CustomerModule
+namespace Mc2.CrudTest.Domain.CustomerModule.Contracts
 {
     public interface ICustomerRepository
     {

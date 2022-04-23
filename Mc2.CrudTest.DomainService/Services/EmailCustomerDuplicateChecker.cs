@@ -1,4 +1,4 @@
-﻿using Mc2.CrudTest.Domain.CustomerModule;
+﻿using Mc2.CrudTest.Domain.CustomerModule.Contracts;
 using System;
 
 namespace Mc2.CrudTest.DomainService.Services

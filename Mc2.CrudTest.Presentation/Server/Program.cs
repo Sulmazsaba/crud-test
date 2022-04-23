@@ -1,5 +1,9 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Mc2.CrudTest.Infrastructure.Persistence;
+using Mc2.CrudTest.Presentation.Server.Extensions;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace Mc2.CrudTest.Presentation.Server
 {
@@ -7,7 +11,16 @@ namespace Mc2.CrudTest.Presentation.Server
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var app = CreateHostBuilder(args).Build();
+
+            app.MigrateDatabase<Mc2DbContext>((context, services) =>
+            {
+                var logger = services.GetService<ILogger<DbContextSeed>>();
+                DbContextSeed.SeedAsync(context, logger).Wait();
+            });
+
+
+            app.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

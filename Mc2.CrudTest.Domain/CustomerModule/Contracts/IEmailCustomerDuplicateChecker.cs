@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mc2.CrudTest.Domain.CustomerModule
+namespace Mc2.CrudTest.Domain.CustomerModule.Contracts
 {
     public interface IEmailCustomerDuplicateChecker
     {
-        bool IsEmailCustomerDuplicate(string email, System.Guid customerId);
+        bool IsEmailCustomerDuplicate(string email, Guid customerId);
 
     }
 }
