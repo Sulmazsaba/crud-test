@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Mc2.CrudTest.Domain.CustomerModule;
+using Mc2.CrudTest.Domain.CustomerModule.Queries;
+using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,14 +11,22 @@ namespace Mc2.CrudTest.Application.Customer
 {
     public class CustomerReader : ICustomerReader
     {
-        public Task<IEnumerable<CustomerDto>> GetAll()
+        private readonly IMediator _mediator;
+
+        public CustomerReader(IMediator mediator)
         {
-            throw new NotImplementedException();
+            _mediator = mediator;
         }
 
-        public Task<CustomerDto> GetById(Guid customerId)
+        public async Task<IEnumerable<CustomerDto>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _mediator.Send(new GetCustomerListQuery());
+        }
+
+
+        public async Task<CustomerDto> GetById(GetCustomerByIdQuery getCustomerByIdQuery)
+        {
+            return await _mediator.Send(getCustomerByIdQuery);
         }
     }
 }

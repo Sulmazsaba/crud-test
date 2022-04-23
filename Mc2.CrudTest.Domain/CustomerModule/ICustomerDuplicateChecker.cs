@@ -8,6 +8,6 @@ namespace Mc2.CrudTest.Domain.CustomerModule
 {
     public interface ICustomerDuplicateChecker
     {
-        void CheckCustomerDuplicated(Guid customerId, string firstName, string lastName, DateTime dateOfBirth);
+        void CheckCustomerDuplicated(System.Guid customerId, string firstName, string lastName, DateTime dateOfBirth);
     }
 }

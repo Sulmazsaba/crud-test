@@ -19,6 +19,7 @@ namespace Mc2.CrudTest.Application
 
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddScoped<ICustomerWriter, CustomerWriter>();
+            services.AddScoped<ICustomerReader, CustomerReader>();
             return services;
         }
     }

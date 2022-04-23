@@ -14,11 +14,11 @@ namespace Mc2.CrudTest.Domain.Persistence
         private readonly List<EventData> eventDatas = new List<EventData>();
         public EventDataRepository()
         {
-            var id = Guid.NewGuid();
+            var id = System.Guid.NewGuid();
             eventDatas.Add(new EventData
             {
                 Id = 1,
-                EntityType = nameof(Customer),
+                EntityType = nameof(Guid),
                 EventType = nameof(CustomerCreatedEvent),
                 EntityId = id,
                 EventSerializedData = JsonConvert.SerializeObject(new CustomerCreatedEvent

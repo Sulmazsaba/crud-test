@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Mc2.CrudTest.Domain.CustomerModule.Commands
 {
-    public class AddCustomerCommandHandler : IRequestHandler<AddCustomerCommand, Guid>
+    public class AddCustomerCommandHandler : IRequestHandler<AddCustomerCommand, System.Guid>
     {
         private readonly ICustomerRepository _customerRepository;
         private readonly ICustomerFactory _customerFactory;
@@ -21,7 +21,7 @@ namespace Mc2.CrudTest.Domain.CustomerModule.Commands
             _customerFactory = customerFactory;
         }
 
-        public async Task<Guid> Handle(AddCustomerCommand request, CancellationToken cancellationToken)
+        public async Task<System.Guid> Handle(AddCustomerCommand request, CancellationToken cancellationToken)
         {
 
             var customer = _customerFactory.Create(request);

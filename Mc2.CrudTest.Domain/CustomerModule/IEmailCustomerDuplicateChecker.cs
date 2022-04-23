@@ -8,7 +8,7 @@ namespace Mc2.CrudTest.Domain.CustomerModule
 {
     public interface IEmailCustomerDuplicateChecker
     {
-        bool IsEmailCustomerDuplicate(string email, Guid customerId);
+        bool IsEmailCustomerDuplicate(string email, System.Guid customerId);
 
     }
 }

@@ -16,9 +16,9 @@ namespace Mc2.CrudTest.Infrastructure
     {
         public static IServiceCollection AddInfrastructureService(this IServiceCollection services, IConfiguration configuration)
         {
+            var con = configuration.GetConnectionString("Default");
             services.AddDbContext<Mc2DbContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("Default"))
-                );
+                options.UseSqlServer(con));
 
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             return services;

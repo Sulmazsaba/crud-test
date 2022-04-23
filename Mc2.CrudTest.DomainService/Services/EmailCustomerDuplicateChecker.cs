@@ -12,7 +12,7 @@ namespace Mc2.CrudTest.DomainService.Services
             _customerRepository = customerRepository;
         }
 
-        public bool IsEmailCustomerDuplicate(string email, Guid customerId)
+        public bool IsEmailCustomerDuplicate(string email, System.Guid customerId)
         {
 
             return _customerRepository.IsEmailExist(email, customerId);

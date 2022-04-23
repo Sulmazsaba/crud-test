@@ -13,7 +13,7 @@ namespace Mc2.CrudTest.Domain.CustomerModule
         {
         }
 
-        public CustomerCreatedEvent(Guid aggregateId) : base(aggregateId)
+        public CustomerCreatedEvent(System.Guid aggregateId) : base(aggregateId)
         {
 
         }

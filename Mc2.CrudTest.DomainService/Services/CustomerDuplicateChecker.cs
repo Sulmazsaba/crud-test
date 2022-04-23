@@ -17,7 +17,7 @@ namespace Mc2.CrudTest.DomainService.Services
             _customerRepository = customerRepository;
         }
 
-        public void CheckCustomerDuplicated(Guid customerId, string firstName, string lastName, DateTime dateOfBirth)
+        public void CheckCustomerDuplicated(System.Guid customerId, string firstName, string lastName, DateTime dateOfBirth)
         {
             var isDuplicated = _customerRepository.IsCustomerExist(customerId, firstName, lastName, dateOfBirth);
             if (isDuplicated)

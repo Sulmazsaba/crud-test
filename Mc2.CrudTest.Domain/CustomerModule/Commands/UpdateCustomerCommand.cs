@@ -9,7 +9,7 @@ namespace Mc2.CrudTest.Domain.CustomerModule.Commands
 {
     public class UpdateCustomerCommand : IRequest
     {
-        public Guid Id { get; set; }
+        public System.Guid Id { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public DateTime DateOfBirth { get; set; }
