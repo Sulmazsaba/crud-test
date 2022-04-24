@@ -4,7 +4,7 @@
     "anonymousAuthentication": true,
     "iisExpress": {
       "applicationUrl": "http://localhost:11115",
-      "sslPort": 44315
+      "sslPort": 0
     }
   },
   "profiles": {
@@ -19,6 +19,7 @@
     "Mc2.CrudTest.Presentation.Server": {
       "commandName": "Project",
       "launchBrowser": true,
+      "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

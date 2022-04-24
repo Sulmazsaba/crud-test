@@ -16,12 +16,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - "ConnectionStrings:Default=Server=mc2db;Database=MC2DB;User Id=sa;Password=SwN12345678"
-
-      - ASPNETCORE_URLS=https://+:443;http://+:80
     depends_on: 
       - mc2db
     ports:
-      - "8080:80"
-      - "443:443"
-    volumes:
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - "8000:80"
